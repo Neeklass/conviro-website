@@ -1,13 +1,13 @@
 {
-  "agencyName": "Conviro Marketing",
+  "agencyName": "Conviro",
   "hero": {
-    "title": "Wir machen Marketing messbar.",
-    "subtitle": "Performance-Marketing für Firmen, die wachsen wollen. Ohne Baukasten-Limits.",
-    "cta": "Jetzt anfragen"
+    "title": "Cool Title.",
+    "subtitle": "Cool Subtile.",
+    "cta": "Cool Call-To-Action"
   },
   "services": [
-    { "title": "SEO", "description": "Gefunden werden, wenn es zählt." },
-    { "title": "Social Ads", "description": "Präzises Targeting auf allen Plattformen." },
-    { "title": "Web-Entwicklung", "description": "High-Performance Seiten für maximale Conversion." }
+    { "title": "Service 1", "description": "Lorem ipsum dolor sit amet." },
+    { "title": "Service 2", "description": "Lorem ipsum dolor sit amet." },
+    { "title": "Service 3", "description": "Lorem ipsum dolor sit amet." }
   ]
 }
