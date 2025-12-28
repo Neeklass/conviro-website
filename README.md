@@ -1,46 +1,119 @@
-# Astro Starter Kit: Basics
+﻿# Conviro Marketing Website
+
+Modern, performance-focused marketing website built with Astro and Tailwind CSS v4.
+
+##  Design
+
+- **Color Scheme**: Purple/Violet gradient theme (modern and professional)
+- **Style**: Glassmorphism effects, animated backgrounds, smooth transitions
+- **Features**: Animated blob backgrounds, gradient text effects, hover animations
+
+##  Quick Start
 
 ```sh
-npm create astro@latest -- --template basics
+# Install dependencies
+npm install
+
+# Start development server (opens at localhost:4321)
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+##  Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+ src/
+    content/
+       config.json          # Content configuration (edit text here!)
+    layouts/
+       MainLayout.astro     # Main layout with nav & footer
+    pages/
+       index.astro          # Homepage with hero & services
+    styles/
+        global.css           # Tailwind CSS v4 import
+ astro.config.mjs             # Astro configuration
+ tailwind.config.ts           # Tailwind CSS v4 configuration
+ package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+##  Editing Content
 
-## 🧞 Commands
+All website content is managed in `src/content/config.json`:
 
-All commands are run from the root of the project, from a terminal:
+```json
+{
+  "agencyName": "Conviro Marketing",
+  "hero": {
+    "title": "Wir machen Marketing messbar.",
+    "subtitle": "Performance-Marketing für Firmen...",
+    "cta": "Jetzt anfragen"
+  },
+  "services": [...]
+}
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Simply edit this file to update text across the entire site!
 
-## 👀 Want to learn more?
+##  Key Features
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Hero Section**: Full-screen hero with animated gradient backgrounds and stats
+- **Services Grid**: Three service cards with hover effects and icons
+- **Responsive**: Mobile-first design that works on all devices
+- **Performance**: Built with Astro for optimal loading speed
+- **Modern Stack**: Tailwind CSS v4, TypeScript support
+
+##  Tech Stack
+
+- **Framework**: [Astro](https://astro.build) v5.16
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) v4.1
+- **Language**: TypeScript
+- **Package Manager**: npm
+
+##  Adding New Pages
+
+1. Create a new .astro file in `src/pages/`
+2. Import and use MainLayout component
+3. Add your content
+
+Example:
+```astro
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="About" description="About us">
+  <section class="py-20">
+    <!-- Your content here -->
+  </section>
+</MainLayout>
+```
+
+##  Customizing Colors
+
+The site uses purple/violet gradients. To change colors, edit the Tailwind classes in `src/pages/index.astro`:
+
+- `purple-400`, `purple-500`, `purple-600` for primary colors
+- `violet-400`, `violet-500`, `violet-600` for secondary colors
+- `fuchsia-400`, `fuchsia-500` for accent colors
+
+##  Common Issues
+
+**Tailwind not working?**
+- Make sure `tailwind.config.ts` exists
+- Verify `global.css` has `@import "tailwindcss";` (v4 syntax)
+- Restart dev server after config changes
+
+**Missing description error?**
+- All pages using MainLayout need both title and description props
+
+##  Resources
+
+- [Astro Documentation](https://docs.astro.build)
+- [Tailwind CSS v4 Docs](https://tailwindcss.com)
+- [Astro Discord](https://astro.build/chat)
