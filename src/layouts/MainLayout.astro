@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import content from '../content/config.json';
+const { title, description } = Astro.props;
+---
+
+
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} | {content.agencyName}</title>
+    <meta name="description" content={description} />
+    </head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="/" class="text-2xl font-black tracking-tight">{content.agencyName}</a>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#services" class="hover:text-blue-600 transition">Leistungen</a>
+                <a href="#about" class="hover:text-blue-600 transition">Über uns</a>
+                <a href="mailto:hallo@conviro.de" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <slot /> </main>
+
+    <footer class="bg-slate-50 border-t py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
+            <p>&copy; {new Date().getFullYear()} {content.agencyName}. Alle Rechte vorbehalten.</p>
+            <div class="mt-4 flex justify-center gap-6">
+                <a href="/impressum" class="hover:underline">Impressum</a>
+                <a href="/datenschutz" class="hover:underline">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
