@@ -1,9 +1,9 @@
 {
-  "agencyName": "Conviro",
+  "agencyName": "Conviro Media",
   "hero": {
     "title": "Cool Title.",
-    "subtitle": "Cool Subtile.",
-    "cta": "Cool Call-To-Action"
+    "subtitle": "Cool Subtitle.",
+    "cta": "Call-To-Action"
   },
   "services": [
     { "title": "Service 1", "description": "Lorem ipsum dolor sit amet." },
